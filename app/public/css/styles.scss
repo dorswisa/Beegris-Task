@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body {
+  background-color: #f66d12;
+  padding: 0;
+  margin: 0;
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  position:absolute;
+  z-index: 10;
+  height: 122px;
+  background-image: linear-gradient(180deg,#6E3B1A , #f66d12);
+}
+
+.header .logo
+{
+  position: absolute;
+  padding-left: 15px;
+  padding-top: 18px;
+}
+
+.modal-content
+{
+  border: 3px solid #ffd400;
+  border-radius: 5px;
+}
+
+.modal-header, .modal-footer, .modal-body {
+  background-color: white;
+  color: black;
+  border: none;
+  justify-content: center;
+}
+
+.modal-body
+{
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.modal-header .close {
+  padding: 0rem 0.6rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal-header
+{
+  height: 60px;
+}
+
+
+.btfooter {
+  background: #ffd400;
+  box-shadow: 0px 9px 18px #fefefe29;
+  border-radius: 6px;
+  border: none;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  height: 46px;
+  padding: 0;
+  outline: none;
+}
+
+.btfooter:hover{
+  box-shadow: 0px 9px 18px #FEFEFE59;
+}
+
+.content {
+  position: relative;
+  border-radius: 6px;
+  background-color: rgba(0,0,0,0.09);
+  width: 60%;
+  font-size: 1.25rem; /* 20 */
+  left: 20%;
+  height: fit-content;
+  margin-top: 0.5em;
+  padding: 5px 10px 15px 10px;
+  text-align: center;
+  display: none;
+}
+
+.box
+{
+  border-radius: 6px;
+  font-size: 1.25rem; /* 20 */
+  background-color: rgba(0,0,0,0.09);
+  position: relative;
+  padding: 100px 20px;
+  width: 60%;
+  left: 20%;
+  margin-top: 10em;
+  height: 350px;
+}
+.box.has-advanced-upload
+{
+  outline: 2px dashed #ffd400;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+  transition: outline-offset .15s ease-in-out, background-color .15s linear;
+}
+.box.is-dragover
+{
+  outline-offset: -20px;
+  outline-color: #ffd400;
+  background-color: rgba(0,0,0,0.2);;
+}
+.box__dragndrop,
+.box__icon
+{
+  display: none;
+}
+.box.has-advanced-upload .box__dragndrop
+{
+  display: inline;
+}
+
+@-webkit-keyframes appear-from-inside
+{
+  from	{ -webkit-transform: translateY( -50% ) scale( 0 ); }
+  75%		{ -webkit-transform: translateY( -50% ) scale( 1.1 ); }
+  to		{ -webkit-transform: translateY( -50% ) scale( 1 ); }
+}
+@keyframes appear-from-inside
+{
+  from	{ transform: translateY( -50% ) scale( 0 ); }
+  75%		{ transform: translateY( -50% ) scale( 1.1 ); }
+  to		{ transform: translateY( -50% ) scale( 1 ); }
+}
+
+.box__file
+{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.box__file + label
+{
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.box__file + label:hover strong,
+.box__file:focus + label strong,
+.box__file.has-focus + label strong
+{
+  color: #ffd400;
+}
+.box__file:focus + label,
+.box__file.has-focus + label
+{
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.box__file + label *
+{
+  /* pointer-events: none; */ /* in case of FastClick lib use */
+}

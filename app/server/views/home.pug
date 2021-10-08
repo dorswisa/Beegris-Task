@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+    link(rel='icon' href='/css/logo.svg')
+    .header
+        .logo
+            a(href='/home')
+                img(src='/css/logo.svg' alt='logo')
+
+
+    form.box(method='post' action='upload-file' enctype='multipart/form-data' novalidate='')
+        .box__input
+            img(src='/css/up-arrow.png' width='120' height='120' style="display: block; margin-left: auto; margin-right: auto; margin-top: -2em;")
+            input#file.box__file(type='file' name='files[]' data-multiple-caption='{count} files selected' multiple='' accept="image/*")
+            label(for='file' style="width: 40%; display: block; margin-left: auto; margin-right: auto; text-align:center; margin-top: 2em;")
+                strong Choose image, or drag it here...
+            button#upload.btfooter(type="button" style="width: 40%; display: block; margin-left: auto; margin-right: auto; margin-top: 2em;") Upload
+
+
+    .content
+        a#original-image.fancybox(data-fancybox='' href='' style="text-decoration: none;")
+            button.btfooter(type="button" style="display: inline-block; height: 50px; padding: 0px 10px 0px 10px; margin-top: 10px; margin-right: 30px;") View original image
+        a#compressed-image.fancybox(data-fancybox='' href='' style="text-decoration: none;")
+            button.btfooter(type="button" style="display: inline-block; height: 50px; padding: 0px 10px 0px 10px; margin-top: 10px; margin-right: 30px; ") View compressed image
+        a#download-zip(href="" download="compressed.zip" style="text-decoration: none;")
+            button.btfooter(type="button" style="display: inline-block; height: 50px; padding: 0px 10px 0px 10px; margin-top: 10px; ") Download compressed
+
+
+    include modals/error
+
+    script(src='/js/home.js')
+
